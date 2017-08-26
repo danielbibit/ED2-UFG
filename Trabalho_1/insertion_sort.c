@@ -1,7 +1,6 @@
 /*Alunos:
 	Daniel Moraes dos Santos  201602449
-	Pedro Ramos Krauze Diehl  xxxxxxxxx
-*/
+	Pedro Ramos Krauze Diehl  201611880
 #include <stdio.h>
 
 void insertion_sort(int *p, int len){
@@ -10,7 +9,7 @@ void insertion_sort(int *p, int len){
 	for(i = 1; i < len; i++){
 		int key = p[i];
 		int j = i - 1;
-		
+
 		while(j >= 0  && p[j] > key){
 			p[j + 1] = p[j];
 			j -= 1;
@@ -24,7 +23,7 @@ int main(){
 	int v[5] = {5, 7, 2, 8, 3};
 
 	insertion_sort(v, 5);
-	
+
 	printf("%i\n", v[0]);
 	printf("%i\n", v[1]);
 	printf("%i\n", v[2]);
