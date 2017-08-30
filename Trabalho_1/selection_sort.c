@@ -23,16 +23,20 @@ void selection_sorting(int *p, int len){
 	}
 }
 
+void print_array(int *p, int len){
+	int i = 0;
+	for(i = 0; i < len; i++)
+		printf("%i,", p[i]);
+}
+
 int main(){
-	int v[5] = {5, 3, 6, 1, 9};
+	int v[20] = {10, 15, 0, 6, 13, 11, 2, 8, 7, 4, 14, 18, 3, 17, 19, 12, 9, 1, 5, 16};
 
-	selection_sorting(v, 4);
+	selection_sorting(v, 20);
 
-	printf("%i\n", v[0]);
-	printf("%i\n", v[1]);
-	printf("%i\n", v[2]);
-	printf("%i\n", v[3]);
-	printf("%i\n", v[4]);
+	print_array(v, 20);
+
+	printf("\n\n%i\n", v[0]);
 
 	return 0;
 }
