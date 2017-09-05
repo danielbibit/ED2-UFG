@@ -8,6 +8,9 @@ void shell_sort(int *p, int len, int debug){
 		gap = gap * 3 + 1;
 
 	while(gap >= 1){
+
+	gap /= 3;
+
 		for(i = gap; i < len; i++){
 			value = p[i];
 			j = i - gap;
@@ -15,11 +18,8 @@ void shell_sort(int *p, int len, int debug){
 				p[j + gap] = p[j];
 				j -= gap;
 			}
-
 			p[j + gap] = value;
 		}
-
-		gap /= 3;
 	}
 }
 
