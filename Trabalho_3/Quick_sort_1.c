@@ -5,44 +5,48 @@
 
 #include <stdio.h>
 
-int v[20] = {10, 15, 0, 6, 13, 11, 2, 8, 7, 4, 14, 18, 3, 17, 19, 12, 9, 1, 5, 16};
+void print_array(int *p,int len);
 
-void particao(int *i, int *j, int left, int right){
+void particao(int esq, int dir, int *i, int *j, int *A) {
 
-  int x, w;
+  int x = 0, w = 0;
 
-  *i = left;
-  *j = right;
+  *i = esq;
+  *j = dir;
 
-  x = v[(*i + *j)/2];
+  x = A[(*i + *j)/2];
 
   do {
-
-    while (x > v[*i]) { (*i)++;}
-    while (x < v[*j]) { (*j)--;}
+    while(x > A[*i]) (*i)++;
+    while(x < A[*j]) (*j)--;
 
     if (*i <= *j) {
-      w = v[*i];
-      v[*i] = v[*j];
-      v[*i] = w;
+      print_array(A,20);
+      w = A[*i];
+      A[*i] = A[*j];
+      A[*j] = w;
+      (*i)++;
+      (*j)--;
     }
 
+    //print_array(A, 20);
+
   } while(*i <= *j);
-
 }
 
-void ordena(int left, int right){
-  printf("Fudeu 1");
-  int i = left, j= right;
-  particao(&i, &j,left,right);
-  if(left < j)
-    ordena(left, j);
-  if(right > i)
-    ordena(i,right);
-}
+void ordena(int esq, int dir, int *A){
 
-void quick_sort(int len){
-  ordena(0, len);
+  int i = 0;
+  int j = 0;
+
+  particao(esq, dir, &i, &j, A);
+
+  if(esq < j) ordena(esq, j, A);
+  if(dir > i) ordena(i, dir, A);
+
+}
+void quick_sort(int *A, int n) {
+  ordena(0, n-1, A);
 }
 
 void print_array(int *p, int len){
@@ -55,9 +59,10 @@ void print_array(int *p, int len){
 }
 
 int main(){
-  printf("Fudeu");
 
-	quick_sort(20);
+    int v[20] = {10, 15, 0, 6, 13, 11, 2, 8, 7, 4, 14, 18, 3, 17, 19, 12, 9, 1, 5, 16};
+
+    quick_sort(v, 20);
 
 	print_array(v, 20);
 
