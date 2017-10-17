@@ -1,0 +1,10 @@
+Para compilar o arquivo utilizando o gcc:
+
+hash_table.c -o hash_table
+
+
+
+Para preencher uma tabela e obter o tempo(delta do clock()), em sistemas *nix:
+
+./hash_table < TESTFILE
+

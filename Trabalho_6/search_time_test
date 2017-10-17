@@ -1,0 +1,89 @@
+P/ m = 31
+    100:
+        Existe: 
+            reduction 2 4 2 4
+            planet 8 2 13 2
+            map 2 4 7 6
+            riot 5 7 7 3
+        Not Existe:
+            ED2 8 8 2 3
+
+    1000:
+        Existe:
+            node 7 4 13 11
+            pull 4 7 6 12
+            film 8 11 4 6
+            cinema 8 6 6 6
+
+        Not Existe:
+            ED2 4 10 10 10
+
+    10000:
+        Existe:
+            breeze 10 4 11 3
+            maze 3 4 5 9
+            patient 2 10 3 8
+            user 13 12 7 15
+
+        Not Existe:
+            ED2 41 27 19 23
+
+P/ m = 79
+    100:
+        Existe: 
+            reduction 7 7 7 7
+            planet 6 5 8 7
+            map 1 7 4 7
+            riot 4 3 1 4
+        Not Existe:
+            ED2 7 3 8 7
+
+    1000:
+        Existe:
+            node 14 5 12 10
+            pull 9 8 10 10
+            film 10 14 14 2
+            cinema 11 9 14 7
+
+        Not Existe:
+            ED2 5 7 10 5
+
+    10000:
+        Existe:
+            breeze 3 3 5 3
+            maze 4 6 6 5
+            patient 6 6 5 8 
+            user 3 7 8 5
+
+        Not Existe:
+            ED2 24 16 28 42
+
+P/ m =151
+    100:
+        Existe: 
+            reduction 6 6 2 2
+            planet 5 5 6 5
+            map 7 7 4 6
+            riot 7 2 5 2
+        Not Existe:
+            ED2 7 7 2 1
+
+    1000:
+        Existe:
+            node 10 10 7 8 11
+            pull 4 3 9 8
+            film 5 8 11 9
+            cinema 9 3 4 6
+
+        Not Existe:
+            ED2 8 8 7 7
+
+    10000:
+        Existe:
+            breeze 2 4 6 6
+            maze 6 2 6 9
+            patient 8 4 7 2
+            user 5 1 6 1
+
+        Not Existe:
+            ED2 13 7 7 17
