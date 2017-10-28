@@ -5,8 +5,8 @@ typedef struct node{
     int key;
     int value;
     struct node *parent;
-    struct node *left_children;
-    struct node *right_children;
+    struct node *left_child;
+    struct node *right_child;
 } node_t;
 
 void insert_tree(node_t *root, int key, int value){
@@ -23,24 +23,30 @@ void insert_tree(node_t *root, int key, int value){
     new_node->value = value;
     
     if(key > root->key){
-        root->right_children = new_node;
+        root->right_child = new_node;
     }else{
-        root->left_children = new_node;
+        root->left_child = new_node;
     }
 }
 
-int tree_height(node_t *root){
-
+// TODO Define the fucntion max()
+int tree_height(node_t *node){
+    if(node == NULL)
+        return -1;
+    else
+        return 1 + max(tree_height(node->left_child), tree_height(node->right_child));
 }
 
-int is_alv(node_t *root){
-
+int balance(node_t *node){
+    return tree_height(node->left_child) - tree_height(node->right_child);
 }
 
 int main(){
     node_t *root = NULL;
+
     insert_tree(root, 2, 4);
     insert_tree(root, 5, 8);
     insert_tree(root, 3, 2);
+    
     return 0;
 }
